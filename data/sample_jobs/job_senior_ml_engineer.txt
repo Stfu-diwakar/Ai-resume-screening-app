@@ -1,0 +1,22 @@
+Job Title: Senior Machine Learning Engineer (NLP & Generative AI)
+
+Company: NeuralStream Labs
+Location: San Francisco, CA (Hybrid / Remote)
+Experience Level: 4-7 Years
+
+About the Role:
+We are seeking a talented Senior Machine Learning Engineer to design, scale, and deploy generative AI applications, semantic search infrastructure, and domain-adapted NLP models. You will collaborate with data scientists and platform engineers to build end-to-end LLM pipelines and retrieval-augmented generation (RAG) systems.
+
+Required Qualifications & Skills:
+- 4+ years of professional software engineering and machine learning experience.
+- Deep expertise in Python, PyTorch, and Hugging Face Transformers.
+- Solid background in Natural Language Processing (NLP), semantic embeddings, and vector databases (e.g. ChromaDB, Pinecone, or Milvus).
+- Production experience building and optimizing Retrieval-Augmented Generation (RAG) pipelines.
+- Hands-on experience containerizing services with Docker and deploying onto Kubernetes or AWS.
+- Proficiency in developing asynchronous REST APIs using FastAPI.
+
+Preferred / Nice to Have:
+- Experience fine-tuning LLMs with LoRA/QLoRA or RLHF.
+- Familiarity with MLOps frameworks like MLflow, Kubeflow, and CI/CD pipelines.
+- Knowledge of relational databases like PostgreSQL and vector extensions.
+- Active contributions to open-source AI libraries.

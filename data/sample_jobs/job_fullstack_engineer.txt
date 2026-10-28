@@ -1,0 +1,21 @@
+Job Title: Senior Full Stack Engineer (React, Python & Cloud)
+
+Company: CloudPulse Systems
+Location: New York, NY
+Experience Level: 3-6 Years
+
+About the Role:
+We are looking for an experienced Senior Full Stack Engineer to lead the architecture and development of our customer-facing analytics dashboards and real-time backend microservices.
+
+Required Qualifications & Skills:
+- 3+ years of full-stack web application development experience.
+- Strong proficiency in modern JavaScript, TypeScript, and React / Next.js.
+- Strong backend experience with Python, FastAPI, or Node.js.
+- Deep expertise in relational database modeling with PostgreSQL and caching with Redis.
+- Experience building and consuming REST APIs and WebSockets.
+- Working knowledge of Docker, CI/CD, and Git.
+
+Preferred / Nice to Have:
+- Experience deploying and orchestrating workloads on AWS or GCP.
+- Familiarity with Tailwind CSS and frontend performance optimization.
+- Understanding of automated testing with Pytest and Jest.

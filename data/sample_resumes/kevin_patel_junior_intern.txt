@@ -1,0 +1,27 @@
+Kevin Patel
+Email: kevin.patel@college.edu | Phone: +1-617-555-9012
+LinkedIn: https://linkedin.com/in/kevinpatel-student | GitHub: https://github.com/kevinpatel-code
+Location: Boston, MA
+
+Professional Summary
+Motivated Computer Science senior seeking an entry-level software engineering or machine learning internship. Solid theoretical foundation in algorithms, data structures, and object-oriented programming with project experience in Python, HTML/CSS, and foundational machine learning.
+
+Technical Skills
+• Languages: Python, Java, C++, HTML, CSS, JavaScript (Basics)
+• Frameworks & Tools: Flask, Pandas, NumPy, Git, VS Code, SQLite
+• Core Competencies: Problem Solving, Data Structures, Algorithms, Teamwork
+
+Work Experience & Internships
+Software Engineering Intern | Boston Web Solutions (Summer 2025)
+• Assisted in building internal admin pages using Flask, HTML/CSS, and SQLite.
+• Wrote unit tests and documented REST endpoints for student management tools.
+• Participated in weekly agile standups and code reviews.
+
+Academic Projects
+• Sentiment Analyzer: Course capstone project analyzing movie reviews using Python, NLTK, and Naive Bayes classifier with 79% accuracy.
+• Campus Event Finder: Simple web app built using Flask, SQLite, and Bootstrap to list upcoming university events.
+
+Education
+Bachelor of Science in Computer Science (Expected Graduation: May 2026)
+Boston University | GPA: 3.7 / 4.0
+Coursework: Data Structures, Operating Systems, Machine Learning Foundations, Web Development

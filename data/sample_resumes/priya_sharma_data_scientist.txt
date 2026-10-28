@@ -1,0 +1,34 @@
+Priya Sharma
+Email: priya.sharma@analytics.org | Phone: +1-312-555-7319
+LinkedIn: https://linkedin.com/in/priyasharma-ds | GitHub: https://github.com/priyasharma-data
+Location: Chicago, IL
+
+Professional Summary
+Data Scientist with 4+ years of experience specializing in statistical modeling, predictive machine learning, and data visualization. Proficient in building automated Scikit-Learn pipelines, exploratory data analysis, and translating complex data into actionable executive insights.
+
+Technical Skills
+• Data Science & ML: Python, Scikit-Learn, Pandas, NumPy, XGBoost, Statistical Modeling, Feature Engineering, Matplotlib, Seaborn
+• NLP & AI (Familiar): PyTorch, NLP, Transformers, spaCy, Prompt Engineering
+• Databases & Cloud: SQL, PostgreSQL, BigQuery, Snowflake, AWS, Docker
+• Tools & Engineering: Git, Jupyter, Airflow, Pytest
+
+Work Experience
+Data Scientist | Horizon Health Analytics (2022 - Present)
+• Built predictive patient risk models using Scikit-Learn, XGBoost, and Python, improving early risk detection accuracy by 28%.
+• Processed multi-terabyte healthcare datasets using SQL, Pandas, and PostgreSQL with automated feature engineering pipelines.
+• Conducted clinical text exploration and sentiment analysis using spaCy and introductory transformer embeddings.
+• Created executive Tableau and Streamlit dashboards for operational hospital forecasting.
+
+Associate Data Analyst | Midwest Financial Insights (2020 - 2022)
+• Extracted and transformed customer transaction data using SQL and Python.
+• Built customer churn classification models using Logistic Regression and Random Forests with 84% ROC-AUC.
+
+Key Projects
+• Customer Churn Early Warning System: Predictive pipeline with automated model evaluation and FastAPI alert endpoints.
+• Clinical Note Classifier: Baseline NLP classification tool comparing TF-IDF with fine-tuned BioBERT embeddings.
+
+Education
+Master of Science in Statistics & Data Science
+University of Chicago | 2018 - 2020
+Bachelor of Science in Mathematics
+University of Illinois Urbana-Champaign | 2014 - 2018

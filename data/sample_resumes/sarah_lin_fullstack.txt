@@ -1,0 +1,33 @@
+Sarah Lin
+Email: sarah.lin@techmail.io | Phone: +1-212-555-8941
+LinkedIn: https://linkedin.com/in/sarahlin-dev | GitHub: https://github.com/sarahlin-fullstack
+Location: New York, NY
+
+Professional Summary
+Senior Full Stack Engineer with 5+ years of experience designing scalable distributed web platforms, high-performance customer-facing interfaces, and secure backend microservices. Skilled in React, Next.js, TypeScript, Python, and PostgreSQL.
+
+Technical Skills
+• Frontend: React, Next.js, TypeScript, JavaScript, Tailwind CSS, Redux, HTML5, CSS3
+• Backend: Python, FastAPI, Node.js, Express.js, REST API, WebSockets
+• Databases: PostgreSQL, MongoDB, Redis, SQLite
+• Cloud & Tools: Docker, AWS, Git, CI/CD, GitHub Actions, Pytest, Agile
+
+Work Experience
+Senior Full Stack Developer | MetroByte Financial (2022 - Present)
+• Led frontend and backend development for a real-time portfolio analytics dashboard using React, TypeScript, Next.js, and Tailwind CSS.
+• Built asynchronous data aggregation microservices in Python using FastAPI and PostgreSQL, serving 500,000 active traders.
+• Implemented Redis caching and optimized complex SQL joins, reducing API response times from 450ms to 65ms.
+• Established CI/CD deployment pipelines on AWS ECS with Docker containers and automated Pytest integration suites.
+
+Full Stack Web Developer | CloudSphere Tech (2020 - 2022)
+• Developed responsive user interfaces using React and Redux with end-to-end REST API integration.
+• Maintained Node.js microservices and MongoDB storage for an enterprise collaboration tool.
+• Integrated third-party OAuth and Stripe payment processing workflows.
+
+Key Projects
+• CryptoPulse Dashboard: Real-time cryptocurrency monitoring application featuring WebSocket streaming, React charts, and FastAPI backend.
+• TaskMaster Pro: Multi-tenant project management platform built with Next.js, Prisma, and PostgreSQL.
+
+Education
+Bachelor of Science in Software Engineering
+New York University (NYU) | 2016 - 2020

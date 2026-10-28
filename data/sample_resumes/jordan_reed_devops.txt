@@ -1,0 +1,34 @@
+Jordan Reed
+Email: jordan.reed@cloudops.net | Phone: +1-206-555-4421
+LinkedIn: https://linkedin.com/in/jordanreed-devops | GitHub: https://github.com/jordanreed-infra
+Location: Seattle, WA
+
+Professional Summary
+Senior DevOps and Cloud Infrastructure Engineer with 7+ years of experience automating distributed systems, managing Kubernetes clusters, and architecting resilient AWS cloud solutions. Expert in Infrastructure as Code (Terraform) and zero-downtime CI/CD deployments.
+
+Technical Skills
+• Cloud Platforms: AWS, GCP, Azure
+• Containerization & Orchestration: Docker, Kubernetes, Helm, ECS, EKS
+• Infrastructure as Code: Terraform, Ansible, CloudFormation
+• CI/CD & Automation: GitHub Actions, GitLab CI, Jenkins, Bash, Python
+• Monitoring & Observability: Prometheus, Grafana, Datadog, ELK Stack
+• Systems: Linux, Networking, Nginx, Security Hardening
+
+Work Experience
+Lead DevOps Engineer | SkyScale Networks (2021 - Present)
+• Architected multi-region Kubernetes (EKS) infrastructure on AWS handling over 50 million daily API requests.
+• Automated infrastructure provisioning using Terraform and GitHub Actions, cutting environment spin-up time from 3 days to 15 minutes.
+• Implemented Prometheus and Grafana alerting systems achieving 99.99% infrastructure availability.
+• Configured secure Docker container image scanning and vulnerability patch pipelines.
+
+Cloud Infrastructure Engineer | Pacific Cloud Solutions (2018 - 2021)
+• Migrated legacy monolithic services to microservices on Docker and AWS ECS.
+• Managed PostgreSQL and MySQL database replication, automated backups, and disaster recovery plans.
+
+Key Projects
+• K8s-AutoScaler: Custom Kubernetes controller written in Go and Python to scale microservice pods based on message queue depth.
+• CloudGuard: Open-source compliance checking tool for Terraform scripts.
+
+Education
+Bachelor of Science in Information Technology
+University of Washington | 2014 - 2018

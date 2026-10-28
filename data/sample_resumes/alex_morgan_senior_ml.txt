@@ -1,0 +1,35 @@
+Alex Morgan
+Email: alex.morgan@email.com | Phone: +1-415-555-0182
+LinkedIn: https://linkedin.com/in/alexmorgan-ai | GitHub: https://github.com/alexmorgan-ml
+Location: San Francisco, CA
+
+Professional Summary
+Senior Machine Learning Engineer with 6+ years of specialized experience in natural language processing (NLP), transformer architectures, and generative AI systems. Proven record of developing scalable semantic search engines, fine-tuning large language models (LLMs), and deploying low-latency RAG systems serving over 2 million monthly queries.
+
+Technical Skills
+• AI & Machine Learning: PyTorch, Hugging Face, Transformers, NLP, Large Language Models (LLM), RAG, Fine-tuning, Vector Embeddings, Scikit-Learn
+• Databases & Vector Search: PostgreSQL, ChromaDB, Pinecone, Redis
+• Backend & Cloud: Python, FastAPI, Docker, Kubernetes, AWS, CI/CD, Git, Linux
+• Methodologies: MLOps, System Design, Unit Testing, Agile
+
+Work Experience
+Senior Machine Learning Engineer | CogniWave AI (2022 - Present)
+• Architected and deployed an enterprise Retrieval-Augmented Generation (RAG) assistant leveraging PyTorch, Hugging Face Transformers, and Pinecone, reducing customer support escalations by 42%.
+• Fine-tuned open-source 7B parameter models using LoRA and QLoRA for domain-specific contract analysis with 91% F1 score.
+• Containerized multi-agent inference microservices with Docker and deployed onto Kubernetes on AWS with horizontal auto-scaling.
+• Implemented high-throughput asynchronous REST APIs using FastAPI, maintaining sub-120ms P99 latency under heavy traffic.
+
+Machine Learning Engineer | Apex Data Labs (2019 - 2022)
+• Built text classification and named entity recognition (NER) pipelines using Python, spaCy, and Scikit-Learn.
+• Designed automated MLOps pipelines using MLflow, Docker, and GitHub Actions for continuous model evaluation and deployment.
+• Integrated PostgreSQL and Redis caching layers to speed up real-time recommendation querying by 3x.
+
+Key Projects
+• OpenRAG Studio: Open-source toolkit for benchmarking dense vector search vs hybrid BM25 retrieval across multi-million document corpora. (Python, PyTorch, ChromaDB, FastAPI)
+• BioMed-Summarizer: Clinical text abstractive summarization service fine-tuned on PubMed datasets using Hugging Face Transformers.
+
+Education
+Master of Science in Computer Science (Artificial Intelligence Specialization)
+Stanford University | 2017 - 2019
+Bachelor of Science in Computer Engineering
+University of California, Berkeley | 2013 - 2017

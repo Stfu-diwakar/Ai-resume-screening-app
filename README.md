@@ -45,9 +45,6 @@ An intelligent, explainable, and production-ready NLP application that parses re
 
 ## 🚀 Running the Web Application
 
-The application is running live at:
-**[http://localhost:8501](http://localhost:8501)**
-
 To run or restart the server manually:
 ```bash
 streamlit run app.py

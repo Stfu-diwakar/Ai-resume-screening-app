@@ -98,12 +98,13 @@ with st.sidebar:
     st.info("💡 **Explainable AI Mode Enabled**: System assists human recruiters with granular reasoning rather than automated rejection.")
 
 # Main Navigation Tabs
-tab_screen, tab_explain, tab_career, tab_academic, tab_history = st.tabs([
+tab_screen, tab_explain, tab_career, tab_academic, tab_history, tab_about = st.tabs([
     "🎯 Screening Dashboard",
     "🔍 Explainable AI & Inspector",
     "🚀 Career Recommendations",
     "📊 Academic Benchmark (S-BERT vs TF-IDF)",
-    "📜 Screening History & Database"
+    "📜 Screening History & Database",
+    "👋 About"
 ])
 
 # ==============================================================================
@@ -750,3 +751,72 @@ with tab_history:
                     "Filename": r["filename"]
                 })
             st.dataframe(pd.DataFrame(hist_rows), use_container_width=True)
+
+
+# ==============================================================================
+# TAB 6: ABOUT HIRESENSE AI
+# ==============================================================================
+with tab_about:
+    st.markdown("## 👋 About HireSense AI")
+    st.markdown(
+        """
+        HireSense AI is an explainable, NLP-powered resume screening and career
+        recommendation platform. It helps compare candidate profiles with job
+        descriptions using contextual semantic similarity, structured skill
+        alignment, and supporting resume evidence.
+
+        The goal is to make screening insights easier to understand—not to replace
+        recruiter judgement. All AI-generated scores and recommendations should
+        be reviewed alongside the original candidate information.
+        """
+    )
+
+    st.markdown("### What the platform offers")
+    about_col1, about_col2 = st.columns(2, gap="large")
+    with about_col1:
+        st.markdown(
+            """
+            **For recruiters**
+            - Multi-format resume parsing (PDF, DOCX, TXT)
+            - Semantic candidate-to-role matching
+            - Explainable fit scores and evidence snippets
+            - Matched and missing skill insights
+            - Screening history and ranking analytics
+            """
+        )
+    with about_col2:
+        st.markdown(
+            """
+            **For job seekers**
+            - Skill-gap identification
+            - Career direction suggestions
+            - Structured learning roadmaps
+            - Portfolio project recommendations
+            - Clearer visibility into role alignment
+            """
+        )
+
+    st.markdown("---")
+    st.markdown("### 👨‍💻 About the Developer")
+    st.markdown(
+        """
+        **Diwakar Jha**  
+        MCA (Artificial Intelligence & Machine Learning) candidate at Chandigarh
+        University, interested in building practical AI, machine learning, NLP,
+        and data-driven applications.
+
+        This project brings together Python, Streamlit, Sentence-BERT, NLP,
+        explainable scoring, and interactive analytics.
+        """
+    )
+
+    link_col1, link_col2, link_col3 = st.columns(3, gap="medium")
+    with link_col1:
+        st.link_button("LinkedIn Profile", "https://www.linkedin.com/in/diwakar-jha-064130229/", use_container_width=True)
+    with link_col2:
+        st.link_button("GitHub Profile", "https://github.com/Stfu-diwakar", use_container_width=True)
+    with link_col3:
+        st.link_button("Project Repository", "https://github.com/Stfu-diwakar/Ai-resume-screening-app", use_container_width=True)
+
+    st.markdown("### 🚀 Explore the project")
+    st.link_button("Open HireSense AI Live Demo", "https://hiresenseai-dwkr.streamlit.app/", type="primary", use_container_width=True)

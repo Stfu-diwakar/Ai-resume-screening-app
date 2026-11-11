@@ -192,14 +192,23 @@ Resume files may contain personal information. Use candidate documents only with
 
 ---
 
-## 👨‍💻 Project
+## 👨‍💻 About the Developer
 
-**HireSense AI — Semantic Resume Screening & Career Recommendation Engine**
-
-Built with Python, NLP, machine learning, and Streamlit.
+**Diwakar Jha**  
+MCA (Artificial Intelligence & Machine Learning) candidate at Chandigarh University, focused on building practical AI, machine learning, NLP, and data-driven applications.
 
 <p align="center">
-  <a href="https://hiresense-ai-dwkr.netlify.app/"><strong>🌐 Explore HireSense AI</strong></a>
+  <a href="https://www.linkedin.com/in/diwakar-jha-064130229/"><strong>LinkedIn Profile</strong></a>
   &nbsp; • &nbsp;
-  <a href="https://hiresenseai-dwkr.streamlit.app/"><strong>🚀 Try the Live Application</strong></a>
+  <a href="https://github.com/Stfu-diwakar"><strong>GitHub Profile</strong></a>
+  &nbsp; • &nbsp;
+  <a href="https://github.com/Stfu-diwakar/Ai-resume-screening-app"><strong>Project Repository</strong></a>
+</p>
+
+## 🚀 Explore HireSense AI
+
+<p align="center">
+  <a href="https://hiresense-ai-dwkr.netlify.app/"><strong>🌐 Project Website</strong></a>
+  &nbsp; • &nbsp;
+  <a href="https://hiresenseai-dwkr.streamlit.app/"><strong>🚀 Launch Live Application</strong></a>
 </p>

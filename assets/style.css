@@ -713,3 +713,59 @@ a:focus-visible {
         font-size: 1.5rem;
     }
 }
+
+
+/* =========================================================
+   ABOUT TAB & FINAL POLISH
+========================================================= */
+
+.stTabs [data-baseweb="tab-list"] {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(104,228,197,.45) transparent;
+}
+
+.stTabs [data-baseweb="tab"] {
+    transition: background .18s ease, color .18s ease;
+}
+
+.stTabs [data-baseweb="tab"]:focus-visible {
+    outline: 2px solid var(--mint) !important;
+    outline-offset: 2px !important;
+}
+
+[data-testid="stLinkButton"] > a {
+    min-height: 46px;
+    overflow-wrap: anywhere;
+}
+
+[data-testid="stLinkButton"] > a:hover {
+    text-decoration: none !important;
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+}
+
+[data-testid="stDataFrame"] {
+    max-width: 100%;
+}
+
+[data-testid="stDataFrame"] iframe {
+    max-width: 100%;
+}
+
+@media (max-width: 640px) {
+    .stTabs [data-baseweb="tab-list"] {
+        padding: .35rem;
+        gap: .25rem;
+    }
+
+    .stTabs [data-baseweb="tab"] {
+        min-height: 40px;
+        padding: .55rem .7rem;
+        font-size: .8rem;
+    }
+
+    [data-testid="stLinkButton"] > a {
+        min-height: 44px;
+        padding: 10px 12px !important;
+    }
+}

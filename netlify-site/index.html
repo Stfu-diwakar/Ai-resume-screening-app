@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="HireSense AI helps teams screen resumes with semantic matching, explainable scoring, and career recommendations.">
+  <title>HireSense AI — Smarter Resume Screening</title>
+  <style>
+    :root{color-scheme:dark;--bg:#080d1b;--panel:#111a2d;--text:#f5f7ff;--muted:#aab5ca;--line:rgba(255,255,255,.12);--a:#8b9cff;--b:#5ce0c0}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% 5%,rgba(92,224,192,.12),transparent 32%),radial-gradient(ellipse at 10% 20%,rgba(139,156,255,.18),transparent 36%),var(--bg);color:var(--text);font:16px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+    header{height:78px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:750;letter-spacing:-.03em;font-size:1.15rem}.logo{width:36px;height:36px;border-radius:11px;background:linear-gradient(135deg,var(--a),var(--b));display:grid;place-items:center;color:#07101d;font-weight:900}
+    nav{display:flex;gap:28px;color:var(--muted);font-size:.92rem}nav a:hover{color:var(--text)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 20px;border-radius:12px;background:linear-gradient(110deg,#9ba8ff,#68e4c5);color:#07101a;font-weight:800;box-shadow:0 10px 30px rgba(104,228,197,.14);transition:transform .2s,filter .2s}.btn:hover{transform:translateY(-2px);filter:brightness(1.06)}.btn.secondary{background:rgba(255,255,255,.06);border:1px solid var(--line);color:var(--text);box-shadow:none}
+    .hero{padding:92px 0 76px;display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}.eyebrow{display:inline-flex;gap:8px;align-items:center;border:1px solid rgba(92,224,192,.3);background:rgba(92,224,192,.08);color:#a9f4df;border-radius:99px;padding:6px 12px;font-size:.8rem;font-weight:700}.dot{width:7px;height:7px;background:var(--b);border-radius:50%}
+    h1{font-size:clamp(2.7rem,6vw,4.8rem);line-height:1.04;letter-spacing:-.065em;margin:22px 0}.gradient{background:linear-gradient(100deg,#aab4ff 15%,#72e9cb 90%);-webkit-background-clip:text;background-clip:text;color:transparent}.lead{font-size:1.12rem;color:var(--muted);max-width:620px}.actions{display:flex;flex-wrap:wrap;gap:13px;margin-top:30px}.micro{color:#8290a8;font-size:.82rem;margin-top:18px}
+    .preview{border:1px solid var(--line);background:linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.025));border-radius:24px;padding:22px;box-shadow:0 28px 90px rgba(0,0,0,.32);transform:rotate(1deg)}.preview-top{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:.82rem}.pill{background:rgba(92,224,192,.12);color:#9cf0d9;padding:5px 9px;border-radius:99px;font-size:.72rem}.score{margin:25px 0 18px;display:flex;align-items:center;gap:17px}.ring{width:82px;height:82px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(closest-side,#111a2d 78%,transparent 80%),conic-gradient(var(--b) 0 87%,#27344a 87%);font-weight:850;font-size:1.3rem}.score strong{display:block;font-size:1.05rem}.score span{color:var(--muted);font-size:.82rem}.barrow{margin:16px 0}.barlabel{display:flex;justify-content:space-between;color:var(--muted);font-size:.8rem;margin-bottom:7px}.bar{height:7px;border-radius:20px;background:#263148;overflow:hidden}.bar i{display:block;height:100%;border-radius:20px;background:linear-gradient(90deg,var(--a),var(--b))}.taglist{display:flex;flex-wrap:wrap;gap:7px;margin-top:22px}.tag{font-size:.72rem;color:#cbd5e7;background:rgba(255,255,255,.07);border:1px solid var(--line);padding:5px 9px;border-radius:8px}
+    section{padding:62px 0}.section-head{text-align:center;max-width:700px;margin:0 auto 34px}.section-head h2{font-size:clamp(1.8rem,4vw,2.65rem);letter-spacing:-.045em;line-height:1.15;margin:0 0 12px}.section-head p{color:var(--muted);margin:0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{padding:23px;border:1px solid var(--line);background:rgba(17,26,45,.72);border-radius:18px}.ico{width:42px;height:42px;border-radius:12px;background:rgba(139,156,255,.14);display:grid;place-items:center;font-size:1.2rem}.card h3{margin:16px 0 7px;font-size:1.05rem}.card p{margin:0;color:var(--muted);font-size:.92rem}.workflow{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.step{border-top:1px solid var(--line);padding-top:18px}.num{color:var(--b);font-size:.8rem;font-weight:800;letter-spacing:.12em}.step h3{margin:7px 0}.step p{color:var(--muted);font-size:.9rem;margin:0}.cta{margin:40px 0 80px;padding:48px 28px;text-align:center;border:1px solid rgba(139,156,255,.24);border-radius:24px;background:linear-gradient(120deg,rgba(139,156,255,.13),rgba(92,224,192,.08))}.cta h2{font-size:clamp(1.8rem,4vw,2.6rem);letter-spacing:-.04em;margin:0 0 10px}.cta p{color:var(--muted);margin:0 0 24px}footer{border-top:1px solid var(--line);padding:25px 0;color:#8491a8;font-size:.82rem;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+    @media(max-width:800px){nav{display:none}.hero{grid-template-columns:1fr;padding:65px 0 50px;gap:35px}.preview{max-width:520px;width:100%;margin:auto}.grid{grid-template-columns:1fr 1fr}.workflow{grid-template-columns:1fr;gap:25px}}
+    @media(max-width:520px){.wrap{width:min(100% - 30px,1120px)}header{height:68px}.header-cta{padding:10px 13px;font-size:.82rem}.hero{padding-top:52px}h1{font-size:2.75rem}.grid{grid-template-columns:1fr}.cta{padding:35px 18px}}
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <a class="brand" href="#" aria-label="HireSense AI home"><span class="logo">H</span><span>HireSense <span class="gradient">AI</span></span></a>
+    <nav aria-label="Main navigation"><a href="#features">Features</a><a href="#workflow">How it works</a><a href="https://github.com/Stfu-diwakar/Ai-resume-screening-app" target="_blank" rel="noreferrer">GitHub</a></nav>
+    <a class="btn header-cta" href="https://hiresenseai-dwkr.streamlit.app/" target="_blank" rel="noreferrer">Launch app ↗</a>
+  </header>
+  <main>
+    <div class="wrap hero">
+      <div>
+        <span class="eyebrow"><span class="dot"></span> Semantic resume intelligence</span>
+        <h1>Find the right fit.<br><span class="gradient">Beyond keywords.</span></h1>
+        <p class="lead">HireSense AI helps make resume screening more meaningful with semantic matching, evidence-aware scoring, and explainable insights — so skills and context matter, not just keyword counts.</p>
+        <div class="actions"><a class="btn" href="https://hiresenseai-dwkr.streamlit.app/" target="_blank" rel="noreferrer">Launch HireSense AI <span aria-hidden="true">↗</span></a><a class="btn secondary" href="https://github.com/Stfu-diwakar/Ai-resume-screening-app" target="_blank" rel="noreferrer">Explore on GitHub</a></div>
+        <p class="micro">A portfolio project demonstrating NLP, semantic search, and explainable AI.</p>
+      </div>
+      <div class="preview" aria-label="Illustrative resume match dashboard preview">
+        <div class="preview-top"><span>Candidate match overview</span><span class="pill">Illustrative preview</span></div>
+        <div class="score"><div class="ring">87%</div><div><strong>Strong semantic match</strong><span>Role alignment snapshot</span></div></div>
+        <div class="barrow"><div class="barlabel"><span>Semantic relevance</span><b>92%</b></div><div class="bar"><i style="width:92%"></i></div></div>
+        <div class="barrow"><div class="barlabel"><span>Skills alignment</span><b>84%</b></div><div class="bar"><i style="width:84%"></i></div></div>
+        <div class="barrow"><div class="barlabel"><span>Evidence coverage</span><b>78%</b></div><div class="bar"><i style="width:78%"></i></div></div>
+        <div class="taglist"><span class="tag">Python</span><span class="tag">Machine Learning</span><span class="tag">NLP</span><span class="tag">Explainable insights</span></div>
+      </div>
+    </div>
+    <section id="features">
+      <div class="wrap">
+        <div class="section-head"><h2>Screen for meaning, not just matching words</h2><p>A practical AI workflow that combines language understanding with transparent evaluation signals.</p></div>
+        <div class="grid">
+          <article class="card"><div class="ico">⌕</div><h3>Semantic matching</h3><p>Sentence-BERT embeddings compare the meaning of resume experience with job requirements, beyond exact keyword overlap.</p></article>
+          <article class="card"><div class="ico">◎</div><h3>Explainable scoring</h3><p>Review match signals, relevant evidence, matched skills, and potential gaps to understand why a profile aligns.</p></article>
+          <article class="card"><div class="ico">↗</div><h3>Career recommendations</h3><p>Surface skill gaps and suggested learning directions that can help candidates plan their next steps.</p></article>
+          <article class="card"><div class="ico">▤</div><h3>Resume parsing</h3><p>Extract structured information from common PDF, DOCX, and TXT resume formats.</p></article>
+          <article class="card"><div class="ico">⌁</div><h3>Evaluation benchmark</h3><p>Compare semantic matching with a TF-IDF baseline using ranking and relevance metrics.</p></article>
+          <article class="card"><div class="ico">◷</div><h3>Screening history</h3><p>Keep track of screening activity within the running application environment.</p></article>
+        </div>
+      </div>
+    </section>
+    <section id="workflow">
+      <div class="wrap">
+        <div class="section-head"><h2>A simple screening workflow</h2><p>Move from uploaded resumes to useful, reviewable insights in a few steps.</p></div>
+        <div class="workflow">
+          <div class="step"><span class="num">01 / UPLOAD</span><h3>Add a resume</h3><p>Upload a supported resume file through the HireSense AI application.</p></div>
+          <div class="step"><span class="num">02 / COMPARE</span><h3>Match against a role</h3><p>Use semantic similarity and skill signals to assess alignment with job requirements.</p></div>
+          <div class="step"><span class="num">03 / REVIEW</span><h3>Explore the explanation</h3><p>Inspect scores, evidence, skill gaps, and recommendations before making decisions.</p></div>
+        </div>
+      </div>
+    </section>
+    <div class="wrap"><div class="cta"><h2>Ready to explore smarter screening?</h2><p>Open the live HireSense AI application and try the resume analysis workflow.</p><a class="btn" href="https://hiresenseai-dwkr.streamlit.app/" target="_blank" rel="noreferrer">Launch HireSense AI ↗</a></div></div>
+  </main>
+  <footer class="wrap"><span>© <span id="year">2026</span> HireSense AI · Built as an AI/NLP portfolio project</span><span><a href="https://github.com/Stfu-diwakar/Ai-resume-screening-app" target="_blank" rel="noreferrer">View source on GitHub ↗</a></span></footer>
+</body>
+</html>

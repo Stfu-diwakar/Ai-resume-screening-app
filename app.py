@@ -136,25 +136,158 @@ if workspace == "Screening":
     st.progress(0.5 if st.session_state.workflow_step == 1 else 1.0,
                 text="Step 1 of 2 · Job details" if st.session_state.workflow_step == 1 else "Step 2 of 2 · Candidate resumes")
 
-    sample_jobs = list(config.SAMPLE_JOBS_DIR.glob("*.txt"))
-    job_options = ["Custom Input"] + [j.stem.replace("job_", "").replace("_", " ").title() for j in sample_jobs]
+    # Curated, ready-to-use job descriptions. Keep these available even when
+    # the optional sample_jobs directory is empty.
+    builtin_jobs = {
+        "Business Analyst": """Role: Business Analyst
+
+Overview:
+We are looking for a Business Analyst who can translate business needs into clear requirements and actionable insights. The candidate will work with business stakeholders, product teams, and technical teams to improve processes and support data-driven decisions.
+
+Key Responsibilities:
+- Gather, document, and validate business requirements through stakeholder discussions.
+- Analyze business processes, identify gaps, and recommend practical improvements.
+- Create BRDs, FRDs, user stories, acceptance criteria, and process-flow diagrams.
+- Work with SQL and Excel to extract, clean, analyze, and interpret business data.
+- Build and maintain dashboards and reports using Power BI or Tableau.
+- Track KPIs, investigate trends, and communicate findings to stakeholders.
+- Coordinate with developers and QA teams during implementation and testing.
+
+Required Skills:
+- Strong analytical thinking, problem-solving, and communication skills.
+- SQL, advanced Excel, data analysis, and data visualization.
+- Familiarity with Power BI or Tableau.
+- Understanding of SDLC, Agile/Scrum, requirement gathering, and documentation.
+- Ability to explain technical concepts in clear business language.
+
+Preferred Qualifications:
+- Bachelor's or master's degree in Business, IT, Computer Science, Analytics, or a related field.
+- Internship or project experience in business analysis, reporting, or process improvement.
+- Exposure to Python, Jira, Confluence, or statistical analysis.
+
+Experience: 0-3 years; fresh graduates with relevant projects are welcome.""",
+        "Python Developer": """Role: Python Developer
+
+Overview:
+We are seeking a Python Developer to build, maintain, and improve reliable applications, backend services, and integrations. The ideal candidate writes clean code, understands core software engineering practices, and enjoys solving practical problems.
+
+Key Responsibilities:
+- Design, develop, test, and maintain applications and backend components using Python.
+- Build REST APIs and integrate third-party services.
+- Work with frameworks such as Flask, FastAPI, or Django.
+- Write reusable modules, unit tests, and clear technical documentation.
+- Work with SQL databases, data models, and query optimization.
+- Debug issues, review code, and improve application performance.
+- Collaborate with frontend developers, QA, and product teams using Git-based workflows.
+
+Required Skills:
+- Strong Python fundamentals, OOP, data structures, and exception handling.
+- Experience with Flask, FastAPI, or Django and REST API development.
+- SQL and relational database fundamentals.
+- Git, debugging, testing, and basic software design principles.
+- Familiarity with JSON, HTTP, virtual environments, and package management.
+
+Preferred Qualifications:
+- Bachelor's or master's degree in Computer Science, IT, or a related discipline.
+- Projects or internship experience deploying Python applications.
+- Exposure to Docker, Linux, CI/CD, cloud platforms, or asynchronous programming.
+
+Experience: 0-3 years; strong academic and personal projects are considered.""",
+        "Machine Learning Engineer": """Role: Machine Learning Engineer
+
+Overview:
+We are looking for a Machine Learning Engineer to develop, evaluate, and deploy machine learning solutions that address real-world problems. The role involves working across data preparation, model development, experimentation, and production integration.
+
+Key Responsibilities:
+- Collect, clean, explore, and transform structured and unstructured datasets.
+- Develop and evaluate supervised and unsupervised machine learning models.
+- Apply feature engineering, model selection, hyperparameter tuning, and validation techniques.
+- Work with Python libraries such as NumPy, pandas, scikit-learn, and optionally PyTorch or TensorFlow.
+- Build reproducible training and inference workflows and expose models through APIs.
+- Track model performance, investigate errors, and communicate experiment results.
+- Collaborate with data, product, and engineering teams to integrate ML solutions.
+
+Required Skills:
+- Strong Python, SQL, statistics, and foundational mathematics for machine learning.
+- Understanding of regression, classification, clustering, model evaluation, and feature engineering.
+- Hands-on experience with pandas, NumPy, and scikit-learn.
+- Knowledge of data preprocessing, cross-validation, and model performance metrics.
+- Familiarity with Git, APIs, and basic software engineering practices.
+
+Preferred Qualifications:
+- Bachelor's or master's degree in Computer Science, AI/ML, Data Science, or a related field.
+- Projects or internship experience building and evaluating ML models.
+- Exposure to deep learning, NLP, computer vision, PyTorch/TensorFlow, MLflow, Docker, or cloud deployment.
+
+Experience: 0-3 years; candidates with demonstrable ML projects are encouraged to apply.""",
+        "Project Manager": """Role: Project Manager
+
+Overview:
+We are seeking an organized Project Manager to coordinate cross-functional teams and deliver projects within agreed scope, timelines, and quality expectations. The candidate should communicate clearly, manage priorities, and identify delivery risks early.
+
+Key Responsibilities:
+- Define project scope, objectives, milestones, deliverables, and success criteria.
+- Build and maintain project plans, schedules, task assignments, and status reports.
+- Coordinate developers, designers, QA, business stakeholders, and external partners.
+- Facilitate project meetings, sprint planning, reviews, and retrospectives.
+- Track dependencies, budgets, risks, issues, and change requests.
+- Communicate progress, blockers, and decisions to stakeholders.
+- Support continuous process improvement and ensure project documentation stays current.
+
+Required Skills:
+- Strong communication, leadership, organization, and problem-solving skills.
+- Understanding of project lifecycle, scope, scheduling, and risk management.
+- Familiarity with Agile/Scrum and traditional project management approaches.
+- Experience with tools such as Jira, Trello, Asana, or Microsoft Project.
+- Ability to manage multiple priorities and work with cross-functional teams.
+
+Preferred Qualifications:
+- Bachelor's or master's degree in Business, Management, IT, or a related field.
+- Internship or project coordination experience; academic project leadership is relevant.
+- Exposure to software development lifecycle, budgeting, and stakeholder management.
+- CAPM, PMP, or Scrum certifications are a plus, not mandatory.
+
+Experience: 0-3 years; entry-level applicants with strong coordination experience are welcome."""
+    }
+
+    existing_sample_jobs = list(config.SAMPLE_JOBS_DIR.glob("*.txt"))
+    existing_job_options = {
+        j.stem.replace("job_", "").replace("_", " ").title(): j
+        for j in existing_sample_jobs
+    }
+    job_options = ["Custom Input"] + list(builtin_jobs) + [
+        name for name in existing_job_options if name not in builtin_jobs
+    ]
 
     if st.session_state.workflow_step == 1:
         st.markdown("### Tell us about the role")
-        selected_job_preset = st.selectbox("Start with a sample role or write your own", job_options, key="job_preset")
-        default_jd_text = ""
-        if selected_job_preset != "Custom Input":
-            matched_file = next(j for j in sample_jobs if j.stem.replace("job_", "").replace("_", " ").title() == selected_job_preset)
-            default_jd_text = matched_file.read_text(encoding="utf-8")
+        selected_job_preset = st.selectbox(
+            "Choose a ready-made job description or write your own",
+            job_options,
+            key="job_preset"
+        )
+        if selected_job_preset in builtin_jobs:
+            default_jd_text = builtin_jobs[selected_job_preset]
+            default_role_title = selected_job_preset
+        elif selected_job_preset in existing_job_options:
+            default_jd_text = existing_job_options[selected_job_preset].read_text(encoding="utf-8")
+            default_role_title = selected_job_preset
+        else:
+            default_jd_text = ""
+            default_role_title = "Target Role"
 
         jd_text_input = st.text_area(
             "Job description",
             value=default_jd_text,
-            height=220,
+            height=260,
             placeholder="Paste the responsibilities, required skills, experience, and qualifications…",
-            key="job_description_input"
+            key=f"job_description_input_{selected_job_preset}"
         )
-        jd_title_input = st.text_input("Role title", value="Target Role", key="job_title_input")
+        jd_title_input = st.text_input(
+            "Role title",
+            value=default_role_title,
+            key=f"job_title_input_{selected_job_preset}"
+        )
 
         if st.button("Continue to candidate resumes", type="primary", use_container_width=True):
             if not jd_text_input.strip():

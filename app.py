@@ -8,6 +8,7 @@ from pathlib import Path
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
+import plotly.io as pio
 import streamlit as st
 
 import config
@@ -35,6 +36,14 @@ st.set_page_config(
 css_file = Path("assets/style.css")
 if css_file.exists():
     st.markdown(f"<style>{css_file.read_text(encoding='utf-8')}</style>", unsafe_allow_html=True)
+
+# Keep the embedding model warm between Streamlit reruns.
+@st.cache_resource(show_spinner=False)
+def get_cached_matcher(model_name: str):
+    return SemanticMatcher(model_name=model_name)
+
+# A consistent dark Plotly theme that matches the HireSense interface.
+pio.templates.default = "plotly_dark"
 
 # Application Header
 st.markdown("""
@@ -175,7 +184,7 @@ with tab_screen:
                     st.warning("No resumes found. Please upload resumes or click 'Load Sample Resumes'.")
                 else:
                     # 3. Parse and Match Candidates
-                    matcher = SemanticMatcher()
+                    matcher = get_cached_matcher(model_choice.split(" ")[0])
                     scored_candidates = []
 
                     # Extract key sentences from JD for evidence matching
@@ -184,7 +193,12 @@ with tab_screen:
                         if len(s.strip()) > 30 and not s.strip().startswith("Job Title")
                     ][:6]
 
-                    for fname, fbytes in files_to_process:
+                    progress = st.progress(0, text="Preparing candidate analysis…")
+                    for candidate_index, (fname, fbytes) in enumerate(files_to_process):
+                        progress.progress(
+                            candidate_index / len(files_to_process),
+                            text=f"Analyzing {fname} ({candidate_index + 1} of {len(files_to_process)})…"
+                        )
                         cand_profile = parse_resume(fbytes, fname)
 
                         # Contextual semantic similarity
@@ -219,6 +233,9 @@ with tab_screen:
                             "evidence_matches": evidence_matches,
                             "explanation": explanation
                         })
+
+                    progress.progress(1.0, text="Candidate analysis complete")
+                    progress.empty()
 
                     # Sort candidates by final score descending
                     scored_candidates.sort(key=lambda x: x["score_data"]["final_score"], reverse=True)
@@ -398,7 +415,7 @@ with tab_explain:
 
         with pcol2:
             st.markdown(f"""
-            <div style="text-align: center; background: #f8fafc; border: 2px solid {score_data['tier_color']}; border-radius: 16px; padding: 2rem 1.5rem; margin-top: 1rem;">
+            <div class="score-summary-card" style="--score-color: {score_data['tier_color']};">
                 <div style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; font-weight: 700;">Job-Fit Score</div>
                 <div style="font-size: 3.5rem; font-weight: 900; color: {score_data['tier_color']}; line-height: 1.1;">{score_data['final_score']}%</div>
                 <div style="display: inline-block; background: {score_data['tier_color']}; color: white; padding: 0.3rem 1rem; border-radius: 20px; font-weight: 700; margin-top: 0.75rem; font-size: 0.95rem;">

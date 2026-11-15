@@ -15,7 +15,7 @@ import streamlit as st
 
 from config import DB_PATH
 from modules.parser import parse_resume, parse_job_description
-from modules.semantic_matcher import TfidfBaseline
+from modules.semantic_matcher import SemanticMatcher, TfidfBaseline
 
 
 PIPELINE = ["Applied", "Shortlisted", "Interview", "Offer", "Rejected"]
@@ -168,6 +168,11 @@ def _update_stage(candidate_id, stage, note=""):
                      (candidate_id, stage, note, now))
 
 
+@st.cache_resource(show_spinner=False)
+def _get_ats_matcher():
+    return SemanticMatcher(model_name="all-MiniLM-L6-v2")
+
+
 def _score(profile, job):
     jd = parse_job_description(job["description"], job["title"])
     candidate_skills = {s.lower() for s in profile.get("skills", [])}
@@ -180,7 +185,8 @@ def _score(profile, job):
     req_cov = len(req_match) / len(req) if req else 1.0
     pref_cov = len(pref_match) / len(pref) if pref else 1.0
     skill_score = (0.8 * req_cov + 0.2 * pref_cov) if req and pref else (req_cov if req else pref_cov)
-    semantic = TfidfBaseline().calculate_similarity(job["description"], profile.get("full_text", ""))
+    matcher = _get_ats_matcher()
+    semantic = matcher.calculate_similarity(job["description"], profile.get("full_text", ""))
     exp_required = float(jd.get("min_experience_years") or 0)
     exp = float(profile.get("experience_years") or 0)
     exp_score = min(exp / exp_required, 1.0) if exp_required else 1.0
@@ -235,7 +241,7 @@ def render_recruiter_workspace():
             filtered = []
             for c in scored:
                 if c["score"] < min_score or c["stage"] not in stage_filter: continue
-                if c["experience"] * 0 + float(c["experience"] or 0) < min_exp: continue
+                if float(c["experience"] or 0) < min_exp: continue
                 if min_tenth and (c["tenth"] is None or c["tenth"] < min_tenth): continue
                 if min_twelfth and (c["twelfth"] is None or c["twelfth"] < min_twelfth): continue
                 if min_cgpa and (c["cgpa"] is None or c["cgpa"] < min_cgpa): continue

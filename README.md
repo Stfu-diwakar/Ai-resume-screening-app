@@ -23,8 +23,8 @@ An AI-assisted recruitment workspace for startups, small hiring teams, and proje
 
 <br/>
 
-[**Launch App**](https://hiresenseai-dwkr.streamlit.app/) ·
-[**Project Website**](https://hiresense-ai-dwkr.netlify.app/) ·
+[**Launch App**](https://ai-resume-screening-app-feature.streamlit.app/) ·
+[**Project Website**](https://ai-resume-screening-app-feature.streamlit.app/) ·
 [**Repository**](https://github.com/Stfu-diwakar/Ai-resume-screening-app)
 
 <br/>

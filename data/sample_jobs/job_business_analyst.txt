@@ -1,0 +1,26 @@
+Role: Business Analyst
+
+Overview:
+We are looking for a Business Analyst who can translate business needs into clear requirements and actionable insights. The candidate will work with business stakeholders, product teams, and technical teams.
+
+Required Skills:
+- SQL and advanced Excel
+- Requirement gathering and documentation
+- Data analysis and problem solving
+- Business process mapping
+- Communication and stakeholder management
+
+Preferred Skills:
+- Power BI or Tableau
+- Python and Pandas
+- Jira and Agile methodologies
+- BRD, FRD, and user stories
+
+Experience:
+0-3 years of relevant experience.
+
+Responsibilities:
+- Gather and document business requirements.
+- Analyze processes and identify improvement opportunities.
+- Build dashboards and communicate KPI trends.
+- Coordinate with developers and QA teams.

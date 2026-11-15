@@ -241,7 +241,7 @@ python test_pipeline.py
 
 ## Sample data and testing
 
-The repository includes sample-data utilities and the existing benchmark dataset. You can also create a small test cohort using synthetic resumes and role descriptions.
+The repository includes five synthetic candidate profiles in PDF/DOCX/TXT formats and sample job descriptions for Full Stack Engineer, Senior ML Engineer, Python Developer, Business Analyst, and Project Manager. In the Recruiter ATS workspace, use **Load included demo resume dataset** and **Import included sample job descriptions** to populate a demo hiring workspace. The app deduplicates identical resume files by fingerprint; only one format per sample candidate is imported by the demo loader.
 
 Suggested manual acceptance checks:
 

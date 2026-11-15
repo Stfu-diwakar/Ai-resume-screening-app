@@ -15,7 +15,7 @@ import streamlit as st
 
 from config import DB_PATH, SAMPLE_RESUMES_DIR, SAMPLE_JOBS_DIR
 from modules.parser import parse_resume, parse_job_description
-from modules.semantic_matcher import SemanticMatcher, TfidfBaseline
+from modules.semantic_matcher import SemanticMatcher
 
 
 PIPELINE = ["Applied", "Shortlisted", "Interview", "Offer", "Rejected"]
@@ -86,7 +86,7 @@ def _first_number(patterns, text, maximum=100):
 
 def _academic_fields(text):
     tenth = _first_number([
-        r'(?:10th|class\s*x|ssc|secondary)[^\n]{0,35}?(\d{2}(?:\.\d{1,2})?)\s*%',
+        r'(?:10th|class\s*x(?!i)|ssc|secondary)[^\n]{0,35}?(\d{2}(?:\.\d{1,2})?)\s*%',
         r'(\d{2}(?:\.\d{1,2})?)\s*%[^\n]{0,25}?(?:10th|class\s*x|ssc)'
     ], text)
     twelfth = _first_number([
@@ -121,6 +121,13 @@ def _profile_from_upload(upload):
 def _save_candidate(profile, fingerprint):
     now = datetime.now().isoformat(timespec="seconds")
     with _connect() as conn:
+        existing = conn.execute(
+            "SELECT id FROM ats_candidates WHERE fingerprint=? OR "
+            "(? IS NOT NULL AND email IS NOT NULL AND lower(email)=lower(?)) LIMIT 1",
+            (fingerprint, profile.get("email"), profile.get("email"))
+        ).fetchone()
+        if existing:
+            return False
         cur = conn.execute("""
             INSERT OR IGNORE INTO ats_candidates
             (fingerprint, filename, name, email, phone, location, skills_json,

@@ -344,6 +344,16 @@ def render_recruiter_workspace():
                 _save_job(title, description)
                 st.success("Job description saved.")
                 st.rerun()
+        if st.button("Import included sample job descriptions", key="ats_import_sample_jobs"):
+            imported = 0
+            for path in sorted(SAMPLE_JOBS_DIR.glob("*.txt")):
+                description = path.read_text(encoding="utf-8")
+                title = re.sub(r"^job_", "", path.stem).replace("_", " ").title()
+                if description.strip():
+                    _save_job(title, description)
+                    imported += 1
+            st.success(f"Imported {imported} sample job description(s).")
+            st.rerun()
         if jobs:
             st.markdown("#### Saved roles")
             for job_item in jobs:

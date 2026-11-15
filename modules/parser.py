@@ -5,7 +5,7 @@ section segmentation, and spaCy / regex NLP preprocessing.
 """
 import io
 import re
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Set
 try:
     import docx
     DOCX_AVAILABLE = True

@@ -1,0 +1,27 @@
+Role: Python Developer
+
+Overview:
+We are seeking a Python Developer to build reliable backend services, APIs, and data-driven applications. The role suits an engineer who enjoys writing maintainable code and collaborating with product and QA teams.
+
+Required Skills:
+- Python programming and object-oriented programming
+- Flask or FastAPI
+- REST API design and integration
+- SQL and relational databases
+- Git and GitHub
+- Debugging, testing, and clean code practices
+
+Preferred Skills:
+- Docker and CI/CD
+- PostgreSQL
+- AWS, Azure, or another cloud platform
+- Pandas and NumPy
+
+Experience:
+0-3 years of relevant experience. Strong projects and practical development experience are welcome.
+
+Responsibilities:
+- Develop and maintain Python services and REST APIs.
+- Integrate databases and third-party services.
+- Write unit tests and participate in code reviews.
+- Troubleshoot issues and document technical decisions.

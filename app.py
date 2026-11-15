@@ -23,6 +23,7 @@ from modules.parser import parse_job_description, parse_resume
 from modules.recommender import generate_recommendations
 from modules.scoring import calculate_candidate_score
 from modules.semantic_matcher import SemanticMatcher, TfidfBaseline
+from modules.recruiter_workspace import render_recruiter_workspace
 
 # Page Configuration
 st.set_page_config(
@@ -110,7 +111,7 @@ with st.sidebar:
 # Focused workspace navigation: keep secondary tools out of the primary flow.
 workspace = st.selectbox(
     "Workspace",
-    ["Screening", "Candidate Inspector", "Career Plan", "Academic Benchmark", "Screening History", "About"],
+    ["Recruiter ATS", "Screening", "Candidate Inspector", "Career Plan", "Academic Benchmark", "Screening History", "About"],
     key="workspace_selector",
     help="Choose one workspace at a time. Start with Screening; the other tools become useful after a run."
 )
@@ -118,6 +119,9 @@ workspace = st.selectbox(
 # ==============================================================================
 # TAB 1: SCREENING DASHBOARD
 # ==============================================================================
+if workspace == "Recruiter ATS":
+    render_recruiter_workspace()
+
 if workspace == "Screening":
     if "workflow_step" not in st.session_state:
         st.session_state.workflow_step = 1

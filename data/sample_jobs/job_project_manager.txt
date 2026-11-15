@@ -1,0 +1,27 @@
+Role: Project Manager
+
+Overview:
+We are seeking a Project Manager to coordinate cross-functional delivery, manage project schedules, and keep stakeholders aligned.
+
+Required Skills:
+- Project planning and execution
+- Agile and Scrum methodologies
+- Risk and issue management
+- Stakeholder communication
+- Jira or equivalent project tracking tools
+- Resource and timeline coordination
+
+Preferred Skills:
+- PMP or CAPM certification
+- Confluence
+- Budget tracking and reporting
+- Software development lifecycle knowledge
+
+Experience:
+2-5 years of project coordination or project management experience.
+
+Responsibilities:
+- Define project milestones, deliverables, and schedules.
+- Track dependencies, risks, blockers, and progress.
+- Facilitate sprint ceremonies and status meetings.
+- Prepare project reports and communicate changes.

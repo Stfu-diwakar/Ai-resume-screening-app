@@ -252,7 +252,9 @@ def render_recruiter_workspace():
                 if min_tenth and (c["tenth"] is None or c["tenth"] < min_tenth): continue
                 if min_twelfth and (c["twelfth"] is None or c["twelfth"] < min_twelfth): continue
                 if min_cgpa and (c["cgpa"] is None or c["cgpa"] < min_cgpa): continue
-                if c["graduation_year"] and not (grad_from <= c["graduation_year"] <= grad_to): continue
+                if (grad_from, grad_to) != (2000, 2035):
+                    if c["graduation_year"] is None or not (grad_from <= c["graduation_year"] <= grad_to):
+                        continue
                 if skill_query and not any(skill_query.lower() in s.lower() for s in c["skills"]): continue
                 if location_query and location_query.lower() not in (c["location"] or "").lower(): continue
                 filtered.append(c)

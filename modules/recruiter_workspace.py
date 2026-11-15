@@ -13,7 +13,7 @@ from pathlib import Path
 import pandas as pd
 import streamlit as st
 
-from config import DB_PATH
+from config import DB_PATH, SAMPLE_RESUMES_DIR, SAMPLE_JOBS_DIR
 from modules.parser import parse_resume, parse_job_description
 from modules.semantic_matcher import SemanticMatcher, TfidfBaseline
 
@@ -306,7 +306,30 @@ def render_recruiter_workspace():
             st.success(f"Imported {added} new profile(s); skipped {duplicates} duplicate(s).")
             for error in errors: st.warning(error)
             st.rerun()
-        st.caption("Academic fields are extracted when clearly labelled; missing values remain blank rather than being guessed.")
+        if st.button("Load included demo resume dataset", key="ats_load_demo"):
+            demo_files = sorted(SAMPLE_RESUMES_DIR.glob("*.docx")) + sorted(SAMPLE_RESUMES_DIR.glob("*.pdf"))
+            # Prefer one document per candidate; the same person may have PDF and DOCX copies.
+            unique_files = {}
+            for path in demo_files:
+                unique_files.setdefault(path.stem, path)
+            added_demo, duplicate_demo, demo_errors = 0, 0, []
+            for path in unique_files.values():
+                try:
+                    profile, fingerprint = _profile_from_upload(type("LocalUpload", (), {
+                        "getvalue": lambda self, p=path: p.read_bytes(),
+                        "name": path.name
+                    })())
+                    if _save_candidate(profile, fingerprint):
+                        added_demo += 1
+                    else:
+                        duplicate_demo += 1
+                except Exception as exc:
+                    demo_errors.append(f"{path.name}: {exc}")
+            st.success(f"Demo dataset: {added_demo} added, {duplicate_demo} already present.")
+            for error in demo_errors:
+                st.warning(error)
+            st.rerun()
+        st.caption("Academic fields are extracted only when clearly labelled; missing values remain blank rather than being guessed.")
 
     with tabs[2]:
         st.markdown("### Job descriptions")
